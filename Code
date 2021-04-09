@@ -11,47 +11,34 @@ public class Main {
         out.println("Linear and Forking Algorithms");
         out.println("Select task");
 	    int i = input.nextInt();
-	    switch(i){
-            case 1:{
-                out.println("Your choice fell on task 1.1"+"\n"+"Linear and Forking Algorithms");
+        switch (i) {
+            case 1 -> {
+                out.println("Your choice fell on task 1.1" + "\n" + "Linear and Forking Algorithms");
                 Task1_1();
-                break;
             }
-
-            case 2:{
-                out.println("Your choice fell on task 1.2"+"\n"+"Linear and Forking Algorithms");
+            case 2 -> {
+                out.println("Your choice fell on task 1.2" + "\n" + "Linear and Forking Algorithms");
                 Task1_2();
-                break;
             }
-
-            case 3:{
-                out.println("Your choice fell on task 2.1"+"\n"+"FOR");
+            case 3 -> {
+                out.println("Your choice fell on task 2.1" + "\n" + "FOR");
                 Task2_1();
-                break;
             }
-
-            case 4:{
-                out.println("Your choice fell on task 2.2"+"\n"+"While");
+            case 4 -> {
+                out.println("Your choice fell on task 2.2" + "\n" + "While");
                 Task2_2();
-                break;
             }
-
-            case 5:{
-                out.println("Your choice fell on task 2.3"+"\n"+"Do while");
+            case 5 -> {
+                out.println("Your choice fell on task 2.3" + "\n" + "Do while");
                 Task2_3();
-                break;
             }
-
-            case 6:{
-                out.println("Your choice fell on task 3.1"+"\n"+"One-dimensional arrays");
+            case 6 -> {
+                out.println("Your choice fell on task 3.1" + "\n" + "One-dimensional arrays");
                 Task3_1();
-                break;
             }
-
-            case 7:{
-                out.println("Your choice fell on task 3.2"+"\n"+"Two-dimensional arrays");
+            case 7 -> {
+                out.println("Your choice fell on task 3.2" + "\n" + "Two-dimensional arrays");
                 Task3_2();
-                break;
             }
         }
     }
@@ -88,7 +75,7 @@ public class Main {
 
     public static void Task2_1()  {
         //массив который позволит записать в него файл
-        List<String> res = new ArrayList<String>();
+        List<String> res = new ArrayList<>();
         for (double x = -6;x<=13;x++){
             double a = sin(5-x);
             double b = cos(x-2);
@@ -118,7 +105,7 @@ public class Main {
 
     public static void Task2_2(){
         double n=1,x=1;
-        List<String> res = new ArrayList<String>(); //массив который позволит записать в него файл
+        List<String> res = new ArrayList<>(); //массив который позволит записать в него файл
 
      while(x <= 1 && x >=-1 ){
          x=sin(tan(n/2));
@@ -149,7 +136,7 @@ public class Main {
 
     public static void Task2_3(){
         double x =12,z;
-        List<String> res = new ArrayList<String>();
+        List<String> res = new ArrayList<>();
 
         do{
            z=tan(x)+5*cos(x-2);
@@ -180,17 +167,18 @@ public class Main {
 
     public static void Task3_1(){
         Scanner input = new Scanner(System.in);//Объявляем Scanner
-        int mas[]=new int[5],sum=0;
-        List<String> res = new ArrayList<String>();
+        int[] mas =new int[5];
+        int sum=0;
+        List<String> res = new ArrayList<>();
 
         out.println("Enter massive elements");
         for(int i=0;i< mas.length;i++){
             mas[i]= input.nextInt();
         }
 
-        for(int i=0;i< mas.length;i++){
-            if( mas[i]<0){
-                sum+=mas[i];
+        for (int ma : mas) {
+            if (ma < 0) {
+                sum += ma;
             }
         }
 
@@ -221,8 +209,9 @@ public class Main {
         int m = input.nextInt();
         out.println("Enter the number of columns in the array");
         int n = input.nextInt();
-        int x[][]= new int[m][n],sum = 0;
-        List<String> B = new ArrayList<String>();
+        int[][] x = new int[m][n];
+        int sum = 0;
+        List<String> B = new ArrayList<>();
 
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[i].length; j++) {
@@ -233,7 +222,7 @@ public class Main {
                 }
             }
         }
-        out.println(String.valueOf(sum));
+        out.println(sum);
 
         String result = Integer.toString(sum);
         B.add(result);
