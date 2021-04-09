@@ -1,0 +1,253 @@
+package com.company;
+
+import java.util.*;
+import static java.lang.Math.*;
+import static java.lang.System.out;
+import java.io.*;
+public class Main {
+//https://docs.google.com/document/d/1sUa8I2-UNIeK87Fd3S41wMPLnEsYC3Gj/edit- ссылка на задания с 1 по 6 кейс
+    public static void main(String[] args) {
+        Scanner input= new Scanner(System.in);
+        out.println("Linear and Forking Algorithms");
+        out.println("Select task");
+	    int i = input.nextInt();
+	    switch(i){
+            case 1:{
+                out.println("Your choice fell on task 1.1"+"\n"+"Linear and Forking Algorithms");
+                Task1_1();
+                break;
+            }
+
+            case 2:{
+                out.println("Your choice fell on task 1.2"+"\n"+"Linear and Forking Algorithms");
+                Task1_2();
+                break;
+            }
+
+            case 3:{
+                out.println("Your choice fell on task 2.1"+"\n"+"FOR");
+                Task2_1();
+                break;
+            }
+
+            case 4:{
+                out.println("Your choice fell on task 2.2"+"\n"+"While");
+                Task2_2();
+                break;
+            }
+
+            case 5:{
+                out.println("Your choice fell on task 2.3"+"\n"+"Do while");
+                Task2_3();
+                break;
+            }
+
+            case 6:{
+                out.println("Your choice fell on task 3.1"+"\n"+"One-dimensional arrays");
+                Task3_1();
+                break;
+            }
+
+            case 7:{
+                out.println("Your choice fell on task 3.2"+"\n"+"Two-dimensional arrays");
+                Task3_2();
+                break;
+            }
+        }
+    }
+
+
+    public static void Task1_1(){
+        //Простое решение уравнения
+        Scanner input= new Scanner(System.in);
+        final float a=1.5f,b=2,c=2.5f;
+        out.println("Enter x");
+        float x = input.nextFloat();
+        out.println("y="+(sin(log1p(abs(cos(x))))+(a+b)/log1p(c)));
+    }
+
+
+    public static void Task1_2(){
+        //Вводим переменные чтобы понять можно ли уместить прямоугольник со сторонами A,B внутри прямоугольника со сторонами C,D
+        Scanner input= new Scanner(System.in);
+        out.println("Enter A");
+        float a = input.nextFloat();
+        out.println("Enter B");
+        float b = input.nextFloat();
+        out.println("Enter C");
+        float c = input.nextFloat();
+        out.println("Enter D");
+        float d = input.nextFloat();
+
+        if(((a<c)&&(b<d))||((a<d)&&(b<c)))
+        {
+            out.println("Yes");
+        }else{out.println("No");}
+    }
+
+
+    public static void Task2_1()  {
+        //массив который позволит записать в него файл
+        List<String> res = new ArrayList<String>();
+        for (double x = -6;x<=13;x++){
+            double a = sin(5-x);
+            double b = cos(x-2);
+            double z = a/b;
+
+            if(a <= 1 && a >=-1 && b <= 1 && b >=-1){
+            out.println("z="+z);
+                String result= Double.toString(z);
+                res.add(result);
+                //Запись в файл в массив
+                try{
+                    File file = new File("C:\\Users\\ilyam\\Desktop\\Новая папка\\Sample.txt");
+                    FileWriter writer = new FileWriter(file);
+                    for(int i = 0; i< (long) res.size() -1; i++){
+                        writer.write(String.valueOf(res));
+                        writer.close();
+                    }
+                }
+                catch(Exception e){
+                    out.println(e.getMessage());
+                }
+            }
+        }
+        out.println("The file has been written");
+    }
+
+
+    public static void Task2_2(){
+        double n=1,x=1;
+        List<String> res = new ArrayList<String>(); //массив который позволит записать в него файл
+
+     while(x <= 1 && x >=-1 ){
+         x=sin(tan(n/2));
+
+         if (x<0){
+             String result= Double.toString(x);
+             res.add(result);
+             out.println("first negative x is "+x);
+             //Запись в файл в массив
+             try{
+                 File file = new File("C:\\Users\\ilyam\\Desktop\\Новая папка\\Sample.txt");
+                 FileWriter writer = new FileWriter(file);
+                 for(int i = 0; i< 2; i++){
+                     writer.write(String.valueOf(res));
+                     writer.close();
+                 }
+             }
+             catch(Exception e){
+                 out.println(e.getMessage());
+             }
+             break;
+         }
+         n++;
+        }
+        out.println("The file has been written");
+    }
+
+
+    public static void Task2_3(){
+        double x =12,z;
+        List<String> res = new ArrayList<String>();
+
+        do{
+           z=tan(x)+5*cos(x-2);
+
+            if(z<0){
+                out.println(round(z));
+
+                String result= Double.toString(round(z));
+                res.add(result);
+                try{
+                    File file = new File("C:\\Users\\ilyam\\Desktop\\Новая папка\\Sample.txt");
+                    FileWriter writer = new FileWriter(file);
+                    for(int i = 0; i< 4; i++){
+                        writer.write(String.valueOf(res));
+                        writer.close();
+                    }
+                }
+                catch(Exception e){
+                    out.println(e.getMessage());
+                }
+            }
+
+            x-=1.2;
+        }while(x>1);
+        out.println("The file has been written");
+    }
+
+
+    public static void Task3_1(){
+        Scanner input = new Scanner(System.in);//Объявляем Scanner
+        int mas[]=new int[5],sum=0;
+        List<String> res = new ArrayList<String>();
+
+        out.println("Enter massive elements");
+        for(int i=0;i< mas.length;i++){
+            mas[i]= input.nextInt();
+        }
+
+        for(int i=0;i< mas.length;i++){
+            if( mas[i]<0){
+                sum+=mas[i];
+            }
+        }
+
+        out.println("sum="+sum);
+
+        String result= Double.toString(round(sum));
+        res.add(result);
+        try{
+            File file = new File("C:\\Users\\ilyam\\Desktop\\Новая папка\\Sample.txt");
+            FileWriter writer = new FileWriter(file);
+            for(int i = 0; i< 4; i++){
+                writer.write(String.valueOf(res));
+                writer.close();
+            }
+        }
+        catch(Exception e){
+            out.println(e.getMessage());
+        }
+        out.println("The file has been written");
+    }
+
+
+    //https://docs.google.com/document/d/1Vt9WqFKjAM8K7wHGs8a5o9590MEEsu9o/edit - ссылка на 7 кейс, задание 3.2
+    public static void Task3_2(){
+        Scanner input = new Scanner(System.in);
+
+        out.println("Enter the number of lines of the array");
+        int m = input.nextInt();
+        out.println("Enter the number of columns in the array");
+        int n = input.nextInt();
+        int x[][]= new int[m][n],sum = 0;
+        List<String> B = new ArrayList<String>();
+
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[i].length; j++) {
+                System.out.print("Введите элемент arr[" + i + "][" + j + "]:");//Показывает пользователю местоположение в массиве, вводимого им числа
+                x[i][j] = input.nextInt();
+                if(x[i][j]>0){
+                    sum+=x[1][j];
+                }
+            }
+        }
+        out.println(String.valueOf(sum));
+
+        String result = Integer.toString(sum);
+        B.add(result);
+        try{
+            File file = new File("C:\\Users\\ilyam\\Desktop\\Новая папка\\Sample.txt");
+            FileWriter writer = new FileWriter(file);
+            for(int i = 0; i< 4; i++){
+                writer.write(String.valueOf(B));
+                writer.close();
+            }
+        }
+        catch(Exception e){
+            out.println(e.getMessage());
+        }
+        out.println("The file has been written");
+    }
+}
