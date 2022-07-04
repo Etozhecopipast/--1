@@ -11,11 +11,12 @@ void main() {
   if (operation == "+"){
      print(num1+num2);
   }
-  if (operation == "-"){
+  else if (operation == "-"){
      print(num1-num2);
   }
-  if (operation == "*"){
-     print(num1*(num2);
+  else if (operation == "*"){
+     print(num1*num2);
   }
   else print(num1/num2);
 }
+
