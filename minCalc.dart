@@ -1,6 +1,7 @@
 import "dart:io";
 
 void main() {
+  print("Welcome to the calculator");
   print("Enter first number:");
   double num1 = double.parse(stdin.readLineSync()!);
   print("Enter second number:");
@@ -19,4 +20,3 @@ void main() {
   }
   else print(num1/num2);
 }
-
