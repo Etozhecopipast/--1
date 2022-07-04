@@ -17,5 +17,5 @@ void main() {
   if (operation == "*"){
      print(num1*(num2);
   }
-  else (print(num1/num2);
+  else print(num1/num2);
 }
