@@ -2,20 +2,20 @@ import "dart:io";
 
 void main() {
   print("Enter first number:");
-  String num1 = stdin.readLineSync()!;
+  double num1 = double.parse(stdin.readLineSync()!);
   print("Enter second number:");
-  String num2 = stdin.readLineSync()!;
+  double num2 = double.parse(stdin.readLineSync()!);
   print("Enter a type of operation");
   String operation = stdin.readLineSync()!;
   
   if (operation == "+"){
-     print(int.parse(num1)+int.parse(num2));
+     print(num1+num2);
   }
   if (operation == "-"){
-     print(int.parse(num1)-int.parse(num2));
+     print(num1-num2);
   }
   if (operation == "*"){
-     print(double.parse(num1)*double.parse(num2));
+     print(num1*(num2);
   }
-  else (print(double.parse(num1)/double.parse(num2)));
+  else (print(num1/num2));
 }
